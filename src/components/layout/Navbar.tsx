@@ -2,6 +2,7 @@
 import { Search, ShoppingBag, User } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+<<<<<<< HEAD
 import { useCartStore } from "@/store/useCartStore";
 import { useRouter } from "next/navigation";
 
@@ -10,11 +11,18 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuHeight, setMenuHeight] = useState<number>(0);
   const [mounted, setMounted] = useState(false);
+=======
+
+export default function Navbar() {
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [menuHeight, setMenuHeight] = useState<number>(0);
+>>>>>>> 9723cef0b4527221482a7760b0006380495f0f99
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   // Object penampung DOM refs untuk mengukur tinggi setiap kategori dropdown
   const contentRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
+<<<<<<< HEAD
   // Cart store
   const { getTotalItems } = useCartStore();
   const totalItems = mounted ? getTotalItems() : 0;
@@ -23,6 +31,8 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
+=======
+>>>>>>> 9723cef0b4527221482a7760b0006380495f0f99
   const handleMouseEnter = (menu: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setActiveMenu(menu);
@@ -111,6 +121,7 @@ export default function Navbar() {
             <button className="text-gray-600 hover:text-[#ff6700] transition-colors">
                 <Search size={20} strokeWidth={2} />
             </button>
+<<<<<<< HEAD
             <button 
               onClick={() => router.push('/cart')}
               className="text-gray-600 hover:text-[#ff6700] transition-colors relative"
@@ -121,6 +132,10 @@ export default function Navbar() {
                     {totalItems}
                   </span>
                 )}
+=======
+            <button className="text-gray-600 hover:text-[#ff6700] transition-colors relative">
+                <ShoppingBag size={20} strokeWidth={2} />
+>>>>>>> 9723cef0b4527221482a7760b0006380495f0f99
             </button>
             <button className="text-gray-600 hover:text-[#ff6700] transition-colors">
                 <User size={20} strokeWidth={2} />
