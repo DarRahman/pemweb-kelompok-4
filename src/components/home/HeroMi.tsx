@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-export default function HeroXiaomi() {
+export default function HeroMi() {
  const slides = [
     {
       id: 1,

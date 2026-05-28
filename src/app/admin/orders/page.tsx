@@ -1,10 +1,26 @@
 import { prisma } from "@/lib/prisma";
 import OrderStatusDropdown from "@/components/admin/OrderStatusDropdown";
 import { ShoppingBag, PackageOpen } from "lucide-react";
+import SearchInput from "@/components/admin/SearchInput";
 
-export default async function AdminOrdersPage() {
+export default async function AdminOrdersPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const params = await searchParams;
+  const q = params.q || "";
+
   // Ambil semua order dari yang paling baru
   const orders = await prisma.order.findMany({
+    where: q ? {
+      OR: [
+        { id: { contains: q, mode: "insensitive" } },
+        { user: { name: { contains: q, mode: "insensitive" } } },
+        { user: { email: { contains: q, mode: "insensitive" } } },
+        { orderItems: { some: { product: { name: { contains: q, mode: "insensitive" } } } } }
+      ]
+    } : undefined,
     orderBy: { createdAt: 'desc' },
     include: {
       user: true,
@@ -26,6 +42,12 @@ export default async function AdminOrdersPage() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="p-4 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-gray-50/50">
+            <SearchInput placeholder="Cari ID pesanan, pembeli, email, atau produk..." defaultValue={q} />
+            <div className="text-xs text-gray-500 font-semibold bg-white border border-gray-200 px-3 py-1.5 rounded-lg shadow-sm">
+              Total: {orders.length} Transaksi
+            </div>
+          </div>
           <div className="overflow-x-auto">
             {orders.length === 0 ? (
               <div className="text-center py-20 bg-gray-50 flex flex-col items-center">

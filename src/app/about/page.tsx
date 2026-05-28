@@ -17,31 +17,36 @@ const teamMembers = [
     name: "Badar Rahman",
     nim: "14524303",
     role: "@dar.rhmn",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    gradient: "from-orange-400 to-[#ff6700]",
+    initials: "BR"
   },
   {
     name: "Khaira Nur Fatihah",
     nim: "14524008",
     role: "@airavwrr",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    gradient: "from-cyan-400 to-[#00bcd4]",
+    initials: "KF"
   },
   {
-    name: "Nassar Afif ",
+    name: "Nassar Afif",
     nim: "14524020",
     role: "@piplefterios_hwang",
-    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    gradient: "from-emerald-400 to-[#20d087]",
+    initials: "NA"
   },
   {
     name: "Teguh Hadi Rachmat",
     nim: "14524212",
     role: "anonimus_43127",
-    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    gradient: "from-indigo-400 to-violet-600",
+    initials: "TR"
   },
   {
     name: "Ubaidillah Mubbarok",
     nim: "14524021",
     role: "@ubdlla44",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    gradient: "from-rose-400 to-rose-600",
+    initials: "UM"
   }
 ];
 
@@ -72,24 +77,25 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-gray-100">
-              <div className="aspect-[3/4] relative overflow-hidden">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                  <div className="flex gap-3 justify-center mb-2">
-                    <button className="bg-white/20 hover:bg-white/40 p-2 rounded-full text-white backdrop-blur-md transition-colors"><GithubIcon /></button>
-                    <button className="bg-white/20 hover:bg-white/40 p-2 rounded-full text-white backdrop-blur-md transition-colors"><LinkedinIcon /></button>
-                  </div>
-                </div>
+            <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group border border-gray-100 flex flex-col">
+              <div className={`h-36 bg-gradient-to-br ${member.gradient} flex items-center justify-center relative overflow-hidden shrink-0`}>
+                <span className="text-white text-4xl font-extrabold tracking-tight select-none drop-shadow-sm opacity-90 group-hover:scale-110 transition-transform duration-300">
+                  {member.initials}
+                </span>
+                
+                {/* Pattern background */}
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
               </div>
-              <div className="p-6 text-center">
-                <h3 className="font-bold text-gray-900 text-lg mb-1 group-hover:text-[#ff6700] transition-colors">{member.name}</h3>
-                <p className="text-[#ff6700] text-[12px] font-bold mb-3 tracking-wider uppercase">{member.nim}</p>
-                <p className="text-gray-400 text-sm font-medium">{member.role}</p>
+              <div className="p-6 text-center flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-bold text-gray-900 text-base mb-1 group-hover:text-[#ff6700] transition-colors line-clamp-1">{member.name}</h3>
+                  <p className="text-gray-400 text-xs font-semibold mb-4">{member.nim}</p>
+                </div>
+                <div className="pt-3 border-t border-gray-50 flex flex-col items-center gap-2">
+                  <span className="text-[11px] font-bold text-gray-500 bg-gray-50 border border-gray-100 px-3 py-1 rounded-full group-hover:bg-[#ff6700]/5 group-hover:text-[#ff6700] group-hover:border-[#ff6700]/20 transition-all duration-300">
+                    {member.role}
+                  </span>
+                </div>
               </div>
             </div>
           ))}

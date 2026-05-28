@@ -5,8 +5,16 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { Users, Mail, Shield, User } from "lucide-react";
 import Image from "next/image";
+import SearchInput from "@/components/admin/SearchInput";
 
-export default async function AdminUsersPage() {
+export default async function AdminUsersPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const params = await searchParams;
+  const q = params.q || "";
+
   const session = await getServerSession(authOptions);
   
   if (!session || !session.user || !(session.user as any).id) {
@@ -17,6 +25,12 @@ export default async function AdminUsersPage() {
 
   // Ambil semua pengguna
   const users = await prisma.user.findMany({
+    where: q ? {
+      OR: [
+        { name: { contains: q, mode: "insensitive" } },
+        { email: { contains: q, mode: "insensitive" } }
+      ]
+    } : undefined,
     orderBy: { createdAt: 'desc' }
   });
 
@@ -37,6 +51,9 @@ export default async function AdminUsersPage() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="p-4 border-b border-gray-100 bg-gray-50/50">
+            <SearchInput placeholder="Cari nama atau email pembeli..." defaultValue={q} />
+          </div>
           <div className="overflow-x-auto">
             {users.length === 0 ? (
               <div className="text-center py-20 bg-gray-50 flex flex-col items-center">

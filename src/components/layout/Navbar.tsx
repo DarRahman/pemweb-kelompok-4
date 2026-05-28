@@ -479,15 +479,15 @@ export default function Navbar() {
       {activeSeries === 'xiaomi' && (
         <>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p3341'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777704849026-929797264.webp" alt="Xiaomi 17" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777704849026-929797264.webp" alt="Xiaomi 17" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">Xiaomi 17</span>
           </div>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p1921'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777704899691-353395620.webp" alt="Xiaomi 17 Ultra" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777704899691-353395620.webp" alt="Xiaomi 17 Ultra" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">Xiaomi 17 Ultra</span>
           </div>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p2290'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777704812515-371191512.webp" alt="Xiaomi 15T Pro" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777704812515-371191512.webp" alt="Xiaomi 15T Pro" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">Xiaomi 15T Pro</span>
           </div>
         </>
@@ -496,15 +496,15 @@ export default function Navbar() {
       {activeSeries === 'redmi' && (
         <>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p1604'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777784472778-535224539.webp" alt="Redmi Note 14" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777784472778-535224539.webp" alt="Redmi Note 14" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">Redmi Note 14</span>
           </div>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p1823'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777704908758-68813948.webp" alt="REDMI A7 Pro" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777704908758-68813948.webp" alt="REDMI A7 Pro" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">REDMI A7 Pro</span>
           </div>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p2794'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777784261788-346915833.webp" alt="REDMI Note 15 Pro+" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777784261788-346915833.webp" alt="REDMI Note 15 Pro+" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">REDMI Note 15 Pro+</span>
           </div>
         </>
@@ -513,15 +513,15 @@ export default function Navbar() {
       {activeSeries === 'poco' && (
         <>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p220'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777783997053-31616074.webp" alt="POCO C85" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777783997053-31616074.webp" alt="POCO C85" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">POCO C85</span>
           </div>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p349'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777782925684-829324348.webp" alt="POCO F7" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777782925684-829324348.webp" alt="POCO F7" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">POCO F7</span>
           </div>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p4666'); }} className="flex-1 bg-gray-50 p-6 rounded-2xl flex flex-col items-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777782854612-719125560.webp" alt="POCO X7 Pro 5G" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777782854612-719125560.webp" alt="POCO X7 Pro 5G" className="w-24 h-24 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">POCO X7 Pro 5G</span>
           </div>
         </>
@@ -573,11 +573,11 @@ export default function Navbar() {
       {activeWearable === 'watches' && (
         <>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p2898'); }} className="flex-1 bg-[#f9f9f9] p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777704833537-448731008.webp" alt="Xiaomi Watch S4" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777704833537-448731008.webp" alt="Xiaomi Watch S4" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">Xiaomi Watch S4</span>
           </div>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p9184'); }} className="flex-1 bg-[#f9f9f9] p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777780707281-226474772.webp" alt="Xiaomi Watch 5" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777780707281-226474772.webp" alt="Xiaomi Watch 5" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">Xiaomi Watch 5</span>
           </div>
         </>
@@ -585,7 +585,7 @@ export default function Navbar() {
 
       {activeWearable === 'bands' && (
         <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p2756'); }} className="w-1/3 bg-[#f9f9f9] p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-           <img src="/uploads/products/neo-product-1777780231707-480920801.webp" alt="Xiaomi Smart Band 9 Pro" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
+           <img src="/uploads/products/mi-product-1777780231707-480920801.webp" alt="Xiaomi Smart Band 9 Pro" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
            <span className="text-xs font-semibold text-gray-800">Xiaomi Smart Band 9 Pro</span>
         </div>
       )}
@@ -593,11 +593,11 @@ export default function Navbar() {
       {activeWearable === 'tws' && (
         <>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p7154'); }} className="flex-1 bg-[#f9f9f9] p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777780787712-570348860.webp" alt="Xiaomi Air 7" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777780787712-570348860.webp" alt="Xiaomi Air 7" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">Xiaomi Air 7</span>
           </div>
           <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p5148'); }} className="flex-1 bg-[#f9f9f9] p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-             <img src="/uploads/products/neo-product-1777704893173-438243729.webp" alt="REDMI Buds 8 Active" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
+             <img src="/uploads/products/mi-product-1777704893173-438243729.webp" alt="REDMI Buds 8 Active" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
              <span className="text-xs font-semibold text-gray-800">REDMI Buds 8 Active</span>
           </div>
         </>
@@ -605,14 +605,14 @@ export default function Navbar() {
 
       {activeWearable === 'glasses' && (
         <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p1157'); }} className="w-1/3 bg-[#f9f9f9] p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-           <img src="/uploads/products/neo-product-1777781378233-632758031.webp" alt="Xiaomi Smart Glasses KV2" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
+           <img src="/uploads/products/mi-product-1777781378233-632758031.webp" alt="Xiaomi Smart Glasses KV2" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
            <span className="text-xs font-semibold text-gray-800">Xiaomi Smart Audio Glasses</span>
         </div>
       )}
 
       {activeWearable === 'tags' && (
         <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p2944'); }} className="w-1/3 bg-[#f9f9f9] p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-all cursor-pointer border border-gray-100">
-           <img src="/uploads/products/neo-product-1777780435430-520710842.webp" alt="Xiaomi Tag" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
+           <img src="/uploads/products/mi-product-1777780435430-520710842.webp" alt="Xiaomi Tag" className="w-20 h-20 object-contain mb-4 mix-blend-multiply" />
            <span className="text-xs font-semibold text-gray-800">Xiaomi Tag</span>
         </div>
       )}
@@ -695,7 +695,7 @@ export default function Navbar() {
                         <span className="text-[10px] font-semibold text-gray-600 leading-tight">90W HyperCharge</span>
                      </div>
                      <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p1627'); }} className="bg-[#f9f9f9] rounded-2xl flex flex-col items-center justify-center p-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer text-center border border-gray-100">
-                        <img src="/uploads/products/neo-product-1777783155632-739779606.webp" alt="Lint Remover" className="w-12 h-12 object-contain mb-2 mix-blend-multiply" />
+                        <img src="/uploads/products/mi-product-1777783155632-739779606.webp" alt="Lint Remover" className="w-12 h-12 object-contain mb-2 mix-blend-multiply" />
                         <span className="text-[10px] font-semibold text-gray-600 leading-tight">Mijia Lint Remover 2</span>
                      </div>
                   </div>
@@ -753,25 +753,25 @@ export default function Navbar() {
                   <div className="grid grid-cols-2 grid-rows-2 gap-4 flex-1">
                      {/* Xiaomi TV A 32 2026 */}
                      <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p5447'); }} className="bg-[#f9f9f9] rounded-2xl flex flex-col items-center justify-center p-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer text-center border border-gray-100">
-                        <img src="/uploads/products/neo-product-1777707950060-303858264.webp" alt="TV A 32" className="w-14 h-14 object-contain mb-2 mix-blend-multiply" />
+                        <img src="/uploads/products/mi-product-1777707950060-303858264.webp" alt="TV A 32" className="w-14 h-14 object-contain mb-2 mix-blend-multiply" />
                         <span className="text-[10px] font-semibold text-gray-600 leading-tight">Xiaomi TV A 32 2026</span>
                      </div>
 
                      {/* Xiaomi TV A 43 FHD */}
                      <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p8172'); }} className="bg-[#f9f9f9] rounded-2xl flex flex-col items-center justify-center p-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer text-center border border-gray-100">
-                        <img src="/uploads/products/neo-product-1777704886235-468993098.webp" alt="TV A 43" className="w-14 h-14 object-contain mb-2 mix-blend-multiply" />
+                        <img src="/uploads/products/mi-product-1777704886235-468993098.webp" alt="TV A 43" className="w-14 h-14 object-contain mb-2 mix-blend-multiply" />
                         <span className="text-[10px] font-semibold text-gray-600 leading-tight">Xiaomi TV A 43 FHD</span>
                      </div>
 
                      {/* Mijia Refrigerator Side 635L */}
                      <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p316'); }} className="bg-[#f9f9f9] rounded-2xl flex flex-col items-center justify-center p-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer text-center border border-gray-100">
-                        <img src="/uploads/products/neo-product-1777704867870-909887034.webp" alt="Refrigerator" className="w-14 h-14 object-contain mb-2 mix-blend-multiply" />
+                        <img src="/uploads/products/mi-product-1777704867870-909887034.webp" alt="Refrigerator" className="w-14 h-14 object-contain mb-2 mix-blend-multiply" />
                         <span className="text-[10px] font-semibold text-gray-600 leading-tight">Mijia Refrigerator Side 635L</span>
                      </div>
 
                      {/* Xiaomi Vacuum G30 Max */}
                      <div onClick={() => { setActiveMenu(null); router.push('/?view_product=p8875'); }} className="bg-[#f9f9f9] rounded-2xl flex flex-col items-center justify-center p-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer text-center border border-gray-100">
-                        <img src="/uploads/products/neo-product-1777708202207-336778188.webp" alt="Vacuum" className="w-14 h-14 object-contain mb-2 mix-blend-multiply" />
+                        <img src="/uploads/products/mi-product-1777708202207-336778188.webp" alt="Vacuum" className="w-14 h-14 object-contain mb-2 mix-blend-multiply" />
                         <span className="text-[10px] font-semibold text-gray-600 leading-tight">Xiaomi Vacuum G30 Max</span>
                      </div>
                   </div>

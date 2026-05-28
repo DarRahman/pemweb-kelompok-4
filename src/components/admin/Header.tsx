@@ -3,9 +3,51 @@
 import { Bell, Search, Menu } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState, useTransition } from "react";
 
 export default function Header() {
   const { data: session } = useSession();
+  const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [value, setValue] = useState(searchParams.get("q") || "");
+  const [isPending, startTransition] = useTransition();
+
+  // Keep state in sync with URL search query
+  useEffect(() => {
+    setValue(searchParams.get("q") || "");
+  }, [searchParams]);
+
+  useEffect(() => {
+    // Only trigger auto search if value changed and it's not the initial mount
+    const currentQ = searchParams.get("q") || "";
+    if (value === currentQ) return;
+
+    const handler = setTimeout(() => {
+      // Determine target search path based on current location
+      let targetPath = pathname;
+      const searchablePages = ["/admin/products", "/admin/orders", "/admin/users"];
+      
+      // If we are on a non-searchable admin page, redirect to products search
+      if (!searchablePages.includes(pathname)) {
+        targetPath = "/admin/products";
+      }
+
+      const params = new URLSearchParams(searchParams.toString());
+      if (value) {
+        params.set("q", value);
+      } else {
+        params.delete("q");
+      }
+
+      startTransition(() => {
+        router.replace(`${targetPath}?${params.toString()}`);
+      });
+    }, 400); // 400ms debounce
+
+    return () => clearTimeout(handler);
+  }, [value, pathname, router, searchParams]);
 
   return (
     <header className="h-[72px] bg-white border-b border-gray-200 px-6 flex items-center justify-between sticky top-0 z-30">
@@ -20,6 +62,8 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search here..."
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
             className="bg-transparent outline-none text-sm w-full text-black placeholder-gray-400"
           />
         </div>

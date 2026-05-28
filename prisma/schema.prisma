@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql" // Pastikan ini mysql, bukan postgresql atau sqlite
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Category {
@@ -29,7 +30,7 @@ model Order {
   user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   orderItems    OrderItem[]
 
-  @@index([userId], map: "Order_userId_fkey")
+  @@index([userId])
 }
 
 model OrderItem {
@@ -38,12 +39,12 @@ model OrderItem {
   productId String
   quantity  Int
   price     Decimal @db.Decimal(15, 2)
-  order     Order   @relation(fields: [orderId], references: [id], map: "OrderItem_orderId_fkey", onDelete: Cascade)
-  product   Product @relation(fields: [productId], references: [id], map: "OrderItem_productId_fkey", onDelete: Cascade)
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
   review    Review?
 
-  @@index([orderId], map: "OrderItem_orderId_fkey")
-  @@index([productId], map: "OrderItem_productId_fkey")
+  @@index([orderId])
+  @@index([productId])
 }
 
 model Cart {
@@ -68,6 +69,7 @@ model CartItem {
 
   @@unique([cartId, productId, variantId]) // Tidak boleh ada duplikat item identik dalam 1 keranjang
   @@index([productId])
+  @@index([variantId])
 }
 
 model Product {
@@ -86,6 +88,8 @@ model Product {
   reviews     Review[]
   createdAt   DateTime         @default(now())
   updatedAt   DateTime         @updatedAt
+
+  @@index([categoryId])
 }
 
 model ProductVariant {
@@ -96,6 +100,8 @@ model ProductVariant {
   storage   String  // Contoh: 256GB
   price     Decimal // Harga khusus varian ini
   cartItems CartItem[] // Relasi agar CartItem mengenali harga spesifik varian ini
+
+  @@index([productId])
 }
 
 enum OrderStatus {
@@ -128,6 +134,7 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+  @@index([userId])
 }
 
 model Session {
@@ -136,6 +143,8 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 model User {
@@ -185,6 +194,7 @@ model UserCoupon {
   coupon    Coupon   @relation(fields: [couponId], references: [id], onDelete: Cascade)
 
   @@unique([userId, couponId])
+  @@index([couponId])
 }
 
 model VerificationToken {
@@ -208,6 +218,9 @@ model Review {
   orderItem   OrderItem @relation(fields: [orderItemId], references: [id], onDelete: Cascade)
 
   createdAt   DateTime  @default(now())
+
+  @@index([userId])
+  @@index([productId])
 }
 
 model ChatRoom {

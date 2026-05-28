@@ -26,10 +26,10 @@ export async function POST(req: Request) {
 
     if (transactionStatus === "capture") {
       // Pembayaran Kartu Kredit berhasil
-      newStatus = fraudStatus === "challenge" ? ("PENDING" as OrderStatus) : ("PROCESSING" as OrderStatus);
+      newStatus = fraudStatus === "challenge" ? ("PENDING" as OrderStatus) : ("PAID" as OrderStatus);
     } else if (transactionStatus === "settlement") {
       // Pembayaran (E-Wallet/VA/QRIS) Lunas!
-      newStatus = "PROCESSING" as OrderStatus;
+      newStatus = "PAID" as OrderStatus;
     } else if (
       transactionStatus === "cancel" ||
       transactionStatus === "deny" ||

@@ -2,9 +2,25 @@ import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import ProductActionButtons from "@/components/admin/ProductActionButtons";
+import SearchInput from "@/components/admin/SearchInput";
 
-export default async function ProductsAdminPage() {
+export default async function ProductsAdminPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const params = await searchParams;
+  const q = params.q || "";
+
   const products = await prisma.product.findMany({
+    where: q ? {
+      OR: [
+        { name: { contains: q, mode: "insensitive" } },
+        { slug: { contains: q, mode: "insensitive" } },
+        { description: { contains: q, mode: "insensitive" } },
+        { category: { name: { contains: q, mode: "insensitive" } } }
+      ]
+    } : undefined,
     include: { category: true },
     orderBy: { createdAt: "desc" },
   });
@@ -25,6 +41,12 @@ export default async function ProductsAdminPage() {
       </div>
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div className="p-4 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-gray-50/50">
+          <SearchInput placeholder="Cari nama, slug, deskripsi, atau kategori..." defaultValue={q} />
+          <div className="text-xs text-gray-500 font-semibold bg-white border border-gray-200 px-3 py-1.5 rounded-lg shadow-sm">
+            Total: {products.length} Produk
+          </div>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>

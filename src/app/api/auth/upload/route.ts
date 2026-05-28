@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
     // 2. Buat nama file unik berakhiran .webp
     const uniqueId = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    const filename = `neo-product-${uniqueId}.webp`;
+    const filename = `mi-product-${uniqueId}.webp`;
     const finalFilePath = path.join(uploadDir, filename);
 
     // 3. Konversi gambar memakai 'sharp' (kualitas 80, ubah ke webp, resize maks 800px)

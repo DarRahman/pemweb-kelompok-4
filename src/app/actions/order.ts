@@ -100,7 +100,7 @@ export async function processCheckout(shippingAddress: string, items: any[], sub
 
     // Buat nomor resi yang anti-bentrok 100% menggunakan Timestamp + Randomizer
     const randomHex = Math.random().toString(16).substr(2, 4).toUpperCase();
-    const orderId = `NEO-${Date.now()}-${randomHex}`;
+    const orderId = `MI-${Date.now()}-${randomHex}`;
 
     // 1. Catat Struk Tagihan (Order & OrderItems) PENDING ke MySQL
     const newOrder = await prisma.order.create({
@@ -120,7 +120,7 @@ export async function processCheckout(shippingAddress: string, items: any[], sub
             }))
          }
        }
-    });
+     });
 
     // 2. Kosongkan Keranjang Database milik User ini (karena sudah berpindah ke Struk Order)
     const userCart = await prisma.cart.findUnique({ where: { userId } });
@@ -146,7 +146,7 @@ export async function processCheckout(shippingAddress: string, items: any[], sub
         },
         customer_details: {
           first_name: session.user.name || "Pelanggan",
-          email: session.user.email || "guest@neostore.com",
+          email: session.user.email || "guest@mistore.com",
           // Karena kita pakai gabungan string dari frontend untuk shippingAddress
         }
       })

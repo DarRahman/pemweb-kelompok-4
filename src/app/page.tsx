@@ -1,4 +1,4 @@
-import HeroNeo from "@/components/home/HeroNeo";
+import HeroMi from "@/components/home/HeroMi";
 import ProductGrid from "@/components/home/ProductGrid";
 import { prisma } from "@/lib/prisma";
 import { Suspense } from "react";
@@ -36,7 +36,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-[var(--background)] flex flex-col font-sans">
       <div className="flex-1 w-full relative pb-16">
-        <HeroNeo />
+        <HeroMi />
         <Suspense fallback={<div className="w-full h-96 bg-gray-100 animate-pulse" />}>
           <ProductGrid initialProducts={safeProducts} />
         </Suspense>

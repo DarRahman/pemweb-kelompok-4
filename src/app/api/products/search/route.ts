@@ -14,6 +14,7 @@ export async function GET(request: Request) {
       where: {
         name: {
           contains: q,
+          mode: 'insensitive',
         }
       },
       take: 6
